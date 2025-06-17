@@ -1,0 +1,31 @@
+#include <stdio.h>
+#include <string.h>
+
+struct _Person
+{
+    char name[30];
+    int heightcm;
+    double weightkg;
+};
+typedef struct _Person Person;
+typedef Person* PPerson;
+// This abbreviates the type name
+typedef struct _Person Person;
+
+int main(int argc, char* argv[])
+{
+    Person Javier;
+    PPerson pJavier;
+
+    // Memory location of variable Javier is assigned to the pointer
+    pJavier = &Javier;
+	strcpy(Javier.name, "Javier");
+    Javier.heightcm = 180;
+    Javier.weightkg = 84.0;
+    pJavier->weightkg = 83.2;
+	
+    // TODO: Show the information of the Peter data structure on the screen
+	printf("%s´s height: %d cm; %s´s weight: %.1f kg\n",Javier.name,Javier.heightcm,Javier.name,Javier.weightkg);
+
+    return 0;
+}

@@ -1,0 +1,19 @@
+#include <stdio.h>
+#include <string.h>
+int copy(char * source, char * destination, unsigned int lengthDestination){
+	if (strlen(source)>lengthDestination){
+		return -1; //No se puede copiar por falta de espacio
+	}
+	strcpy(destination,source);
+	return 0; //La copia fue exitosa
+}
+int main(){
+	char source[]="Hola me llamo Hugo";
+	char destination[40];
+	int result=copy(source,destination,sizeof(destination));
+	if (result==0){
+		printf("La cadena ha sido copiada %s\n",destination);
+	}else{
+		printf("No hay suficiente espacio para copiar la cadena");
+	}
+}

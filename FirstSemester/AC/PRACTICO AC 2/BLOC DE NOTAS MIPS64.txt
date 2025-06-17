@@ -1,0 +1,53 @@
+FORMULAS PARA MIPS 64
+---------------------------
+Numero de conjuntos(Sets)=Number of lines / associativity (Numero de lineas / numero de vias)
+Numero de conjuntos (Sets) = 2^(set bits)
+
+Bits almacena cada linea de cache= Line bits
+
+B(Bloque) = Line Size / Bus Size (en bytes) Bus Size te lo dan ellos o pone que en nuestro simulador son 64 bits, 64bits/8bits = 8 Bytes
+Cache miss time = Main memory access time * B (Bloque)
+
+El tiempo medio de acceso a la jerarquía de memoria con los niveles de, memoria caché y memoria principal viene dada por la expresión:
+T = Ac * tc + (1-Ac)*(tp*B)
+Donde, Ac es la tasa de aciertos en caché; tc es el tiempo de acceso a caché; tp es el tiempo de acceso a memoria principal; y B es el tamaño
+de línea expresado en bytes
+
+
+
+
+TASA DE ACIERTOS SI LOS ACCESOS FUESEN ALEATORIOS = Numero bloques cache / Numero bloques mem principal
+
+***ES ESTA***
+ACIERTOS ALEATORIA=tamaño cache / 2^(adress bits)
+
+Numero bloques cache= tamaño cache / line size
+Numero bloques mem principal= tamaño memoria / line size
+
+
+
+NUMERO DE BLOQUE = es la direccion en hexadecimal sin el offset
+ 
+
+Cuantas LINEAS DE CACHE SE USAN EN TODOS LOS ACCESOS hay que mirar cuantas lineas tienen el bit V a 1.
+
+
+TAMAÑO DE CACHE = Number of lines x Line size
+Mem size= 2^ address bits
+Number of sets (Conjuntos) = Number of lines / associativity
+Line size = 2^ offset bits
+
+---------------------------------------
+SIMULADOR
+
+// Declaración e inicialización de una variable global de tipo puntero a flotante
+float globalValue = 3.14;
+float *globalPointer = &globalValue;
+
+void exampleFunction() {
+    // Declaración e inicialización de una variable local de tipo carácter
+    char localChar = 'A';
+
+
+Archivo 3-4maps.c para ver el id;
+Archivo 3-4print.vm para ver Local variable, virtual address y todo eso, mirar FLAGS; hacer el gcc con el 3-4print-pte.c
